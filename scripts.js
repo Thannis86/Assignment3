@@ -3,72 +3,119 @@ const mainCookie = (document.getElementById("cookie").style.cursor = "pointer");
 // Cursor style info
 
 const mCookieBtn = document.querySelector("#mainCookie");
-
 const mCount = document.querySelector("#mainCount");
-const cCount = document.querySelector("#clickCount");
-const tCount = document.querySelector("#timerCount");
 const save = document.querySelector("#save");
 const load = document.querySelector("#load");
+const cookieLvl = document.querySelector("#cookieLvl");
 
-let clickCounter = 0;
-let timeCounter = 0;
+let mainvalue = 0;
 let store01 = 0;
 let store02 = 0;
 
+save.addEventListener("click", function () {
+  localStorage.setItem("mainvalue", mainvalue);
+  localStorage.setItem("store01", store01);
+  localStorage.setItem("store02", store02);
+});
+
+load.addEventListener("click", function () {
+  mainvalue = localStorage.getItem("mainvalue");
+  store01 = localStorage.getItem("store01");
+  store02 = localStorage.getItem("store02");
+});
+
 mCookieBtn.addEventListener("click", function () {
   if (store01 == 0) {
-    clickCounter++;
-    let mainCounter = clickCounter + timeCounter;
-    cCount.textContent = clickCounter;
-    mCount.textContent = mainCounter;
+    mainvalue++;
+    mCount.textContent = mainvalue;
   } else if (store01 == 1) {
-    clickCounter += 2;
-    let mainCounter = clickCounter + timeCounter;
-    cCount.textContent = clickCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 2;
+    mCount.textContent = mainvalue;
   } else if (store01 == 2) {
-    clickCounter += 4;
-    let mainCounter = clickCounter + timeCounter;
-    cCount.textContent = clickCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 4;
+    mCount.textContent = mainvalue;
   } else if (store01 == 3) {
-    clickCounter += 8;
-    let mainCounter = clickCounter + timeCounter;
-    cCount.textContent = clickCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 8;
+    mCount.textContent = mainvalue;
   } else if (store01 == 4) {
-    clickCounter += 16;
-    let mainCounter = clickCounter + timeCounter;
-    cCount.textContent = clickCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 16;
+    mCount.textContent = mainvalue;
   }
 });
 
 setInterval(function () {
   if (store02 == 0) {
-    timeCounter++;
-    let mainCounter = clickCounter + timeCounter;
-    tCount.textContent = timeCounter;
-    mCount.textContent = mainCounter;
+    mainvalue++;
+    mCount.textContent = mainvalue;
   } else if (store02 == 1) {
-    timeCounter += 2;
-    let mainCounter = clickCounter + timeCounter;
-    tCount.textContent = timeCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 2;
+    mCount.textContent = mainvalue;
   } else if (store02 == 2) {
-    timeCounter += 4;
-    let mainCounter = clickCounter + timeCounter;
-    tCount.textContent = timeCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 4;
+    mCount.textContent = mainvalue;
   } else if (store02 == 3) {
-    timeCounter += 8;
-    let mainCounter = clickCounter + timeCounter;
-    tCount.textContent = timeCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 8;
+    mCount.textContent = mainvalue;
   } else if (store02 == 4) {
-    timeCounter += 16;
-    let mainCounter = clickCounter + timeCounter;
-    tCount.textContent = timeCounter;
-    mCount.textContent = mainCounter;
+    mainvalue += 16;
+    mCount.textContent = mainvalue;
   }
 }, 1000);
+
+// mCookieBtn.addEventListener("click", function () {
+//   if (store01 == 0) {
+//     mainvalue++;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store01 == 1) {
+//     mainvalue += 2;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store01 == 2) {
+//     mainvalue += 4;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store01 == 3) {
+//     mainvalue += 8;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store01 == 4) {
+//     mainvalue += 16;
+//
+//     mCount.textContent = mainvalue;
+//
+//   }
+// });
+
+// setInterval(function () {
+//   if (store02 == 0) {
+//     mainvalue++;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store02 == 1) {
+//     mainvalue += 2;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store02 == 2) {
+//     mainvalue += 4;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store02 == 3) {
+//     mainvalue += 8;
+//
+//     mCount.textContent = mainvalue;
+//
+//   } else if (store02 == 4) {
+//     mainvalue += 16;
+//
+//     mCount.textContent = mainvalue;
+//
+//   }
+// }, 1000);
