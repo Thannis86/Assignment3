@@ -1,4 +1,20 @@
 body {
-  grid-template-columns: 10% 10% 60% 10% 10%;
-  grid-template-rows: 20% 60% 20%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 10% 10% 60% 10% 10%;
+}
+
+h1 {
+  display: flex;
+  color: red;
+  grid-area: 1 / 2 / 2 / 3;
+  justify-content: center;
+  align-items: center;
+}
+
+#cookie {
+  display: flex;
+  grid-area: 3 / 2 / 4 / 3;
+  justify-self: center;
+  align-self: baseline;
 }
